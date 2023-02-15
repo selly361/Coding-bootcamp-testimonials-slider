@@ -13,8 +13,12 @@ export const GlobalStyle = createGlobalStyle`
   /* Set core body defaults */
   body {
     height: 100vh;
-    width: 100vw;
-    background: url("images/pattern-bg.svg") no-repeat right/600px, url("images/pattern-curve.svg") no-repeat  bottom left;
+    margin: auto;
+    background: url("images/pattern-bg.svg") no-repeat, url("images/pattern-curve.svg") no-repeat;
+    background-size: 550px, 610px;
+    background-position: center right 100px ,bottom left;
+    padding-top: 113px;
+    overflow: hidden;
   }
 
 

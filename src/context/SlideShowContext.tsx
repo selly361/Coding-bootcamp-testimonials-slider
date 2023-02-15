@@ -5,7 +5,8 @@ import slideShowData from "data/data.json";
 import { wrap } from "framer-motion";
 
 export const SlideShowContextProvider = createContext<ISlideShowContext>({
-  currentSlide: slideShowData[0],
+  currentSlideIndex: 2,
+  currentSlide: slideShowData[2],
   direction: 1,
   nextSlide: () => {},
   prevSlide: () => {},
@@ -17,21 +18,30 @@ interface IProps {
 
 function SlideShowContext({ children }: IProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(
-    wrap(0, slideShowData.length, 0)
+    wrap(2, slideShowData.length, 0)
   );
   const [direction, setDirection] = useState(1);
-
+  const [currentSlide, setCurrentSlide] = useState(slideShowData[currentSlideIndex])
+    
   function nextSlide() {
     setDirection(1);
     setCurrentSlideIndex(wrap(0, slideShowData.length, currentSlideIndex + 1));
+    
+    setTimeout(() => {
+      setCurrentSlide(slideShowData[currentSlideIndex])
+    }, 1000)
   }
 
   function prevSlide() {
     setDirection(-1);
     setCurrentSlideIndex(wrap(0, slideShowData.length, currentSlideIndex - 1));
+    
+    setTimeout(() => {
+      setCurrentSlide(slideShowData[currentSlideIndex])
+    }, 1000)
+
   }
 
-  const currentSlide = slideShowData[currentSlideIndex];
 
   return (
     <SlideShowContextProvider.Provider
@@ -40,6 +50,7 @@ function SlideShowContext({ children }: IProps) {
         nextSlide,
         currentSlide,
         direction,
+        currentSlideIndex
       }}
     >
       {children}
