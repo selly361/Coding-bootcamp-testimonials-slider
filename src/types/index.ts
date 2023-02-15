@@ -8,6 +8,7 @@ interface ISlide {
 }
 
 export interface ISlideShowContext {
+  currentSlideIndex: number;
   currentSlide: ISlide;
   direction: number;
   nextSlide: () => void;
