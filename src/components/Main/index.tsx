@@ -25,7 +25,7 @@ function Main() {
         animate="center"
         exit="exit"
         transition={{
-          duration: 1,
+          duration: .7,
           ease: "easeInOut",
         }}
       >

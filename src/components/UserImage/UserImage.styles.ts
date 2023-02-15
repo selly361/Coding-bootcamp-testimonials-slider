@@ -12,7 +12,7 @@ export const StyledImage = styled.img`
 
 export const PaginationButton = styled.button`
   position: absolute;
-  min-width: 112px;
+  max-width: 112px;
   height: 56px;
   background: #ffffff;
   box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
@@ -22,8 +22,13 @@ export const PaginationButton = styled.button`
   align-items: center;
   gap: 48px;
   bottom: -28px;
+  border: unset;
 
-  svg {
+  button {
     cursor: pointer;
+    width: 50px;
+    height: 56px;
+    display: grid;
+    place-items: center;
   }
 `;

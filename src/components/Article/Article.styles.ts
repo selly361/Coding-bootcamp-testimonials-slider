@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const StyledArticle = styled(motion.article)`
   width: 635px;
   height: 354px;
-  background: url("images/pattern-quotes.svg") no-repeat contain/left top;
+  background: url("images/pattern-quotes.svg") no-repeat;
+  background-position: left 100px top 0px;
 `;
 
 export const BottomSection = styled.section`
